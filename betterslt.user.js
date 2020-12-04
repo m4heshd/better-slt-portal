@@ -8,21 +8,28 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     let stdSel = "#root > div > div > div:nth-child(3) > div > div > div > div:nth-child(3) > div.col-md-8 > div > div:nth-child(1) > div > div > div > div:nth-child(1) > div > div > div:nth-child(3) > svg > text";
 
     let totSel = "#root > div > div > div:nth-child(3) > div > div > div > div:nth-child(3) > div.col-md-8 > div > div:nth-child(1) > div > div > div > div:nth-child(2) > div > div > div:nth-child(3) > svg > text";
 
+    let loySel = "#root > div > div > div:nth-child(3) > div > div > div > div:nth-child(3) > div.col-md-8 > div > div > div > div > div > div > div > div > div:nth-child(3) > svg > text";
+
     let xhrnew = null;
 
-    function updUI(pkgData) {
+    function updPkg(pkgData) {
         let std = document.querySelector(stdSel);
         std.innerHTML = pkgData.usageDetails["0"].remaining + "GB";
 
         let tot = document.querySelector(totSel);
         tot.innerHTML = pkgData.usageDetails["1"].remaining + "GB";
+    }
+
+    function updLoy(pkgData) {
+        let loy = document.querySelector(stdSel);
+        loy.innerHTML = pkgData.usageDetails["0"].remaining + "GB";
     }
 
     let req = XMLHttpRequest.prototype.open;
@@ -32,14 +39,21 @@
                 xhrnew = this;
                 let pkgData = JSON.parse(this.responseText);
                 setTimeout(function () {
-                    updUI(pkgData);
+                    updPkg(pkgData);
                 }, 200);
             }
             if (this.responseURL === "https://omniscapp.slt.lk/mobitelint/slt/sltvasservices/dashboard/summary") {
                 xhrnew = this;
                 let pkgData = JSON.parse(this.responseText);
                 setTimeout(function () {
-                    updUI(pkgData.my_package_info);
+                    updPkg(pkgData.my_package_info);
+                }, 200);
+            }
+            if (this.responseURL === "https://omniscapp.slt.lk/mobitelint/slt/sltvasservices/dashboard/bonus_data") {
+                xhrnew = this;
+                let pkgData = JSON.parse(this.responseText);
+                setTimeout(function () {
+                    updLoy(pkgData);
                 }, 200);
             }
         });
