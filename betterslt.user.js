@@ -1,11 +1,14 @@
 // ==UserScript==
-// @name         Better SLT Portal
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  Makes the stupid SLT Usage meter much much more user friendly
-// @author       m4heshd
-// @match        https://internetvas.slt.lk/dashboard
-// @grant        none
+// @name        Better SLT Portal
+// @namespace   http://tampermonkey.net/
+// @version     1.0
+// @updateURL   https://raw.githubusercontent.com/m4heshd/better-slt-portal/master/betterslt.user.js
+// @downloadURL https://raw.githubusercontent.com/m4heshd/better-slt-portal/master/betterslt.user.js
+// @supportURL  https://github.com/m4heshd/better-slt-portal/issues
+// @description Makes the stupid SLT Broadband portal much much more user friendly
+// @author      m4heshd
+// @match       https://internetvas.slt.lk/dashboard
+// @grant       none
 // ==/UserScript==
 
 (function () {
