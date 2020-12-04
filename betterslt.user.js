@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Better SLT Portal
-// @namespace   http://tampermonkey.net/
-// @version     1.0
+// @namespace   https://github.com/m4heshd
+// @version     1.2
 // @updateURL   https://raw.githubusercontent.com/m4heshd/better-slt-portal/master/betterslt.user.js
 // @downloadURL https://raw.githubusercontent.com/m4heshd/better-slt-portal/master/betterslt.user.js
 // @supportURL  https://github.com/m4heshd/better-slt-portal/issues
